@@ -1,24 +1,23 @@
 import { personal, company } from '../fixtures/consultancy.json'
 
 describe('Formulário de Consultoria', () => {
+    // before(()=> {
+    //     cy.log('Isso acontece isso antes de todos os testes uma única vez')
+    // })
     beforeEach(() => {
         cy.login()
         cy.goTo('Formulários', 'Consultoria')
     })
-
     it('Deve solicitar consultoria individual', () => {
         cy.fillConsultancyForm(personal)
         cy.submitConsultancyForm()
         cy.validadeConsultancyModal()
-
     })
 
     it('Deve solicitar consultoria In Company', () => {
         cy.fillConsultancyForm(company)
         cy.submitConsultancyForm()
         cy.validadeConsultancyModal()
-
-
     })
 
     it('Deve verificar os campos obrigatórios', () => {
@@ -34,9 +33,17 @@ describe('Formulário de Consultoria', () => {
             cy.contains('label', label)
                 .parent()
                 .find('p')
+                .should('be.visible')
                 .should('have.text', message)
                 .and('have.class', 'text-red-400')
                 .and('have.css', 'color', 'rgb(248, 113, 113)')
         })
     })
+    // afterEach(() => {
+    //     cy.log('Isso acontece depois de cada teste')
+    // })
+
+    // after(()=> {
+    //     cy.log('Isso acontece depois de todos os testes uma única vez')
+    // })
 })

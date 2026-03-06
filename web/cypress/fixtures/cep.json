@@ -1,7 +1,8 @@
 {
-        "cep": "04534011",
-        "street": "Rua Joaquim Floriano",
-        "neighborhood": "Itaim Bibi",
-        "city": "São Paulo",
-        "state": "SP" 
+    "cep": "04534011",
+    "street": "Rua Joaquim Floriano",
+    "neighborhood": "Itaim Bibi",
+    "city": "São Paulo",
+    "state": "SP"
+
 }

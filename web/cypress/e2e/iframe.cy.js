@@ -1,10 +1,9 @@
-describe('iFrame', ()=> {
-
-    it('Deve poder tocar o video de exemplo', ()=> {
+describe('iFrame ', () => {
+    it('Deve pooder tocar o video de exemplo', () => {
         cy.login()
         cy.contains('Video').click()
 
-        // think time
+        // Think time
         cy.wait(3000)
 
         cy.get('iframe[title="Video Player"]')
@@ -20,5 +19,5 @@ describe('iFrame', ()=> {
         cy.get('@iFramePlayer')
             .find('.pause-button')
             .should('be.visible')
-    })
-})
+    });
+});

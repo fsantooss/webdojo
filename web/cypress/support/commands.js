@@ -27,7 +27,7 @@
 import 'cypress-real-events'
 import './actions/consultancy.actions'
 
-import { getTodayFormattedDate } from './utils'
+import { getTodayForm } from './utils'
 
 Cypress.Commands.add('start', () => {
     cy.visit('/')
@@ -51,12 +51,12 @@ Cypress.Commands.add('goTo', (buttonName, pageTitle) => {
 
 // Helpers
 Cypress.Commands.add('login', (ui = false) => {
-    if (ui == true) {
+    if (ui === true) {
         cy.start()
         cy.submitLoginForm('papito@webdojo.com', 'katana123')
     } else {
         const token = 'e1033d63a53fe66c0fd3451c7fd8f617'
-        const loginDate = getTodayFormattedDate()
+        const loginDate = getTodayForm()
 
         cy.setCookie('login_date', loginDate)
 

@@ -1,41 +1,41 @@
 {
   "personal": {
-    "name": "Fernando Papito",
-    "email": "papito@teste.com.br",
+    "name": "Felipe Santos",
+    "email": "felipe@teste.com.br",
     "phone": "11 99999-1000",
     "consultancyType": "Individual",
     "personType": "cpf",
-    "document": "65602530070",
+    "document": "656025300-0",
     "discoveryChannels": [
       "Instagram",
-      "LinkedIn",
-      "Udemy",
       "YouTube",
-      "Indicação de Amigo"
+      "LinkedIn",
+      "Indicação de Amigo",
+      "Udemy"
     ],
     "file": "./cypress/fixtures/document.pdf",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidente ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet",
     "techs": [
       "Cypress",
       "Selenium",
-      "webDriverIO",
+      "WebDriverIO",
       "Playwright",
       "Robot Framework"
     ],
     "terms": true
   },
   "company": {
-    "name": "Fernando Papito",
-    "email": "papito@teste.com.br",
+    "name": "Felipe Santos",
+    "email": "felipe@teste.com.br",
     "phone": "11 99999-1000",
     "consultancyType": "In Company",
     "personType": "cnpj",
-    "document": "35593798000107",
+    "document": "33810761000168",
     "discoveryChannels": [
       "LinkedIn"
     ],
     "file": "./cypress/fixtures/document.pdf",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidente ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet",
     "techs": [
       "Cypress"
     ],

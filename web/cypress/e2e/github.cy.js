@@ -3,39 +3,39 @@ describe('Gerenciamento de Perfis no Github', () => {
     beforeEach(() => {
         cy.login()
         cy.goTo('Tabela', 'Perfis do GitHub')
-    })
-
-    it('Deve poder cadastrar um novo perfil do github', () => {
-        cy.get('#name').type('Fernando Papito')
-        cy.get('#username').type('qapapito')
+    });
+    it('Deve poder cadastrar um perfil do GitHub', () => {
+        cy.get('#name').type('Felipe')
+        cy.get('#username').type('FelipeSantos')
         cy.get('#profile').type('QA')
 
         cy.contains('button', 'Adicionar Perfil').click()
 
-        cy.get('#name').type('Fernando Papito')
-        cy.get('#username').type('papitodev')
+        cy.get('#name').type('Felipe')
+        cy.get('#username').type('Felps')
         cy.get('#profile').type('QA')
 
         cy.contains('button', 'Adicionar Perfil').click()
 
-        cy.contains('table tbody tr', 'papitodev')
+        cy.contains('table tbody tr', 'Felps')
             .should('be.visible')
             .as('trProfile')
 
         cy.get('@trProfile')
-            .contains('td', 'Fernando Papito')
+            .contains('td', 'Felipe')
             .should('be.visible')
 
         cy.get('@trProfile')
+            .should('be.visible')
             .contains('td', 'QA')
             .should('be.visible')
-    })
+    });
 
-    it('Deve poder remover um perfil do github',()=> {
-        
+    it('Deve poder remover um perfil do github', () => {
+
         const profile = {
-            name: 'Fernando Papito',
-            username: 'papito123',
+            name: 'Felipe Santos',
+            username: 'Felps',
             desc: 'QA'
         }
 
@@ -55,11 +55,11 @@ describe('Gerenciamento de Perfis no Github', () => {
             .should('not.exist')
     })
 
-     it('Deve validar o link do github',()=> {
-        
+    it('Deve validar o link do github', () => {
+
         const profile = {
-            name: 'Fernando Papito',
-            username: 'papitodev',
+            name: 'Felipe Santos',
+            username: 'FelipeSantos',
             desc: 'QA'
         }
 
@@ -76,6 +76,5 @@ describe('Gerenciamento de Perfis no Github', () => {
         cy.get('@trProfile').find('a')
             .should('have.attr', 'href', 'https://github.com/' + profile.username)
             .and('have.attr', 'target', '_blank')
-
     })
-})
+});

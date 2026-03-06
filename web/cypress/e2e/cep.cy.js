@@ -1,12 +1,11 @@
 import address from '../fixtures/cep.json'
 
-describe('CEP', ()=> {
-    beforeEach(()=> {
-        cy.login()
+describe('CEP', () => {
+    beforeEach(() => {
+        cy.login(true)
         cy.goTo('Integração', 'Consulta de CEP')
-    })
-
-    it('Deve validar a consulta de CEP', ()=> {
+    });
+    it('Deve validar a consulta de CEP', () => {   
 
         // cy.intercept('GET', `https://viacep.com.br/ws/${address.cep}/json/`, {
         //     statusCode: 200,
@@ -23,17 +22,9 @@ describe('CEP', ()=> {
 
         // cy.wait('@getCep')
 
-        cy.get('#street')
-            .should('have.value', address.street)
-
-            cy.get('#neighborhood')
-            .should('have.value', address.neighborhood)
-
-            cy.get('#city')
-            .should('have.value', address.city)
-
-            cy.get('#state')
-            .should('have.value', address.state)
-
-    })
-})
+        cy.get('#street').should('have.value', address.street)
+        cy.get('#neighborhood').should('have.value', address.neighborhood)
+        cy.get('#city').should('have.value', address.city)
+        cy.get('#state').should('have.value', address.state)
+    });
+});

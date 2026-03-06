@@ -1,4 +1,4 @@
-import { getTodayFormattedDate } from "../support/utils"
+import { getTodayForm } from "../support/utils"
 
 describe('Login', () => {
   it('Deve logar com sucesso', () => {
@@ -13,16 +13,16 @@ describe('Login', () => {
       .should('be.visible')
       .and('have.text', 'Olá QA, esse é o seu Dojo para aprender Automação de Testes.')
 
-      cy.getCookie('login_date').should('exist')
+    cy.getCookie('login_date').should('exist')
 
-      cy.getCookie('login_date').should((cookie) => {
-        expect(cookie.value).to.eq(getTodayFormattedDate())
-      })
+    cy.getCookie('login_date').should((cookie) => {
+      expect(cookie.value).to.equal(getTodayForm())
+    })
 
-      cy.window().then((win) => {
-        const token = win.localStorage.getItem('token')
-        expect(token).to.match(/^[a-fA-F0-9]{32}$/)
-      })
+    cy.window().then((win) => {
+      const token = win.localStorage.getItem('token')
+      expect(token).to.match(/^[a-f0-9]{32}$/i)
+    })
   })
 
   it('Não deve logar com senha inválida', () => {
